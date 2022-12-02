@@ -1,6 +1,18 @@
 import '../css/style.css';
-import { createRequest } from './createRequest';
 import Notiflix from 'notiflix';
+
+async function createRequest(value, page) {
+  const resp = await fetch(
+    `https://pixabay.com/api?key=31776776-892f87ec0bcca7b792e7dfca0&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`
+  );
+
+  if (!resp.ok) {
+    throw new Error(resp.statusText);
+  }
+
+  const data = await resp.json();
+  return data;
+}
 
 const searchForm = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
