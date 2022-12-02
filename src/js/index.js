@@ -46,6 +46,8 @@ function onSubmit(e) {
 }
 
 function onSuccess(data) {
+  console.log(data);
+  console.log(data.total);
   if (!data.total) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
