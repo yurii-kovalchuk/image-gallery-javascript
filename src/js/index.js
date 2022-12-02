@@ -68,6 +68,7 @@ function onSuccess(data) {
 
 function onError(error) {
   Notiflix.Notify.failure(error.message);
+  console.error(error.message);
 }
 
 function createMarkup(arr) {
