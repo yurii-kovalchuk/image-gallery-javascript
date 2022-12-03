@@ -7,7 +7,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 async function createRequest(value, page) {
   try {
     const response = await axios.get(
-      `https://pixabay.com/api?key=31776776-892f87ec0bcca7b792e7dfca0&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`
+      `https://pixabay.com/api/?key=31776776-892f87ec0bcca7b792e7dfca0&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`
     );
     return response.data;
   } catch (error) {
