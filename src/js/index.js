@@ -1,16 +1,13 @@
 import '../css/style.css';
 import Notiflix from 'notiflix';
 import axios from 'axios';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 async function createRequest(value, page) {
   try {
     const response = await axios.get(
-      `https://pixabay.com/api?key=31776776-892f87ec0bcca7b792e7dfca0&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
+      `https://pixabay.com/api?key=31776776-892f87ec0bcca7b792e7dfca0&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`
     );
     return response.data;
   } catch (error) {
@@ -27,6 +24,7 @@ loadMoreBtn.addEventListener('click', loadMore);
 
 let searchValue = '';
 let numberOfPage = 1;
+let galleryInstance = new SimpleLightbox('.gallery a');
 
 function onSubmit(e) {
   e.preventDefault();
@@ -90,8 +88,8 @@ function createMarkup(arr) {
         comments,
         downloads,
       }) =>
-        `<div class="photo-card">
-  <img src="${webformatURL}" alt="${tags}" loading="lazy" width="300"/>
+        `<a href=${largeImageURL}><div class="photo-card">
+  <img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" width="300" height="200"/>
   <div class="info">
     <p class="info-item">
       <b>Likes </b>${likes}
@@ -106,11 +104,12 @@ function createMarkup(arr) {
       <b>Downloads </b>${downloads}
     </p>
   </div>
-</div>`
+</div></a>`
     )
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
+  galleryInstance.refresh();
 }
 
 function loadMore() {

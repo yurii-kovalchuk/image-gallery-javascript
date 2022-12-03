@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .wrapper {
   background-color: lightblue;
   position: fixed;
@@ -24,8 +29,11 @@ body {
   gap: 10px;
 }
 
+.gallery-img {
+  object-fit: cover;
+}
+
 .photo-card {
-  flex-basis: 300px;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
