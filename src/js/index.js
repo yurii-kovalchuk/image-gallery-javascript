@@ -44,18 +44,18 @@ function onSubmit(e) {
 }
 
 function onSuccess(data) {
-  if (!data.total) {
+  if (!data.totalHits) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
     return;
   } else if (numberOfPage === 1) {
-    Notiflix.Notify.success(`Hooray! We found totalHits images ${data.total}`);
+    Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images`);
   }
 
   createMarkup(data.hits);
 
-  let remainder = data.total - numberOfPage * 40;
+  let remainder = data.totalHits - numberOfPage * 40;
 
   if (remainder > 0) {
     loadMoreBtn.removeAttribute('hidden');
