@@ -65,6 +65,10 @@ function onSuccess(data) {
       Notiflix.Notify.warning(
         `We're sorry, but you've reached the end of search results.`
       );
+      gallery.insertAdjacentHTML(
+        'beforeend',
+        `<p>We're sorry, but you've reached the end of search results.</p>`
+      );
     }
   }
 }
