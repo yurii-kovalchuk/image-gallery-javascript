@@ -1,18 +1,13 @@
 {
-  "name": "parcel-project-template",
-  "version": "2.0.0",
-  "description": "",
-  "homepage": "https://yurii-kovalchuk.github.io/goit-js-hw-11",
+  "name": "image-gallery-javascript",
+  "version": "1.0.0",
+  "description": "Image gallery on JavaScript",
+  "homepage": "https://yurii-kovalchuk.github.io/image-gallery-javascript",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
+    "build": "parcel build src/*.html --public-url /image-gallery-javascript/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
-  },
-  "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Yurii Kovalchuk",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
