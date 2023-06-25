@@ -17,7 +17,14 @@ a {
 #search-form {
   width: 300px;
   margin: 0 auto;
-  padding: 25px 0px;
+  padding: 15px 0px;
+}
+
+.input {
+  padding: 10px;
+  border: transparent;
+  outline: none;
+  border-radius: 5px;
 }
 
 .gallery {
@@ -56,13 +63,25 @@ a {
 }
 
 .load-more {
-  background-color: lightblue;
+  background-color: deepskyblue;
   border: none;
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
 }
 
-.load-more:active {
+.load-more:hover {
+  background-color: lightskyblue;
+}
+
+.searchBtn {
+  background-color: deepskyblue;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
   background-color: lightskyblue;
 }
